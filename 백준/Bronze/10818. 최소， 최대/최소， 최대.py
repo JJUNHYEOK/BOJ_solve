@@ -1,15 +1,10 @@
 n = int(input())
 
-numbers = list(map(int,input().split()))
+num = list(map(int,input().split()))
 
-maximum = numbers[0]
-minimum = numbers[0]
+maxi = max(num)
+mini = min(num)
 
-for i in range(len(numbers)):
-  if numbers[i] > maximum:
-    maximum = numbers[i]
-  if numbers[i] < minimum:
-    minimum = numbers[i]
+print(mini, end = ' ')
+print(maxi)
 
-print(minimum, end = ' ')
-print(maximum)
