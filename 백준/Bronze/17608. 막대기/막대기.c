@@ -1,31 +1,28 @@
 #include <stdio.h>
+#define SIZE 100000
 
-#define MAX 100000
+int main(){
+    int arr[SIZE]; 
+    int num, val;
+    int cnt = 1;
 
-int main() {
-  int line[MAX];
-  int cnt = 1;
-
-  int len = 0;
-  scanf("%d", &len);
-
-  int data;
-
-  for (int i = 0; i < len; i++) {
-    scanf("%d", &data);
-    line[i] = data;
-  }
-
-  int max_height = line[len - 1];
-
-  for (int i = len - 2; i >= 0; i--) {
-    if (line[i] > max_height) {
-      cnt += 1;
-      max_height = line[i];
+    scanf("%d", &num);
+    for(int i=0; i<num; i++){
+        scanf("%d", &val);
+        arr[i] = val;
     }
-  }
 
-  printf("%d", cnt);
+    int max = arr[num-1];
 
-  return 0;
+
+    for(int j=num-2; j>=0; j--){
+        if(max<arr[j]){
+            max = arr[j];
+            cnt++;
+        }
+    }
+
+    printf("%d", cnt);
+
+    return 0;
 }
