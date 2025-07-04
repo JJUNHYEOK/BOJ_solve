@@ -3,11 +3,15 @@ sys.setrecursionlimit(2000000)
 
 input = sys.stdin.readline
 
-
+# 교훈
+# 1. pseudo code를 준 문제는 그냥 그거 따라 풀자 .. 시간 복잡도 줄여도 구조가 다르면 어차피 오답 처리된다 ..
+# 2. 들여쓰기에 조금 더 민감해지자. 한 라인이 어디에 있느냐에 따라 결과가 아예 달라짐
+# 3. 여러 수를 입력받을때는 무조건 for나 map만 있는게 아니라 그냥 처음부터 list로 받아버리자
+# 4. idx 값이 필요한 문제에서는 무조건 int형으로 반환할 수 있도록 하자(ㅋㅋ)
 
 def merge_sort(arr, p, r):
   if p<r :
-    q = (p+r) // 2
+    q = (p+r) // 2 # 얘때문에 디버깅 20분 가량 소요됨 .. idx -> 무조건 integer임을 잊지 말자 ...
     merge_sort(arr, p, q)
     merge_sort(arr, q+1, r)
     merge(arr, p, q, r)
