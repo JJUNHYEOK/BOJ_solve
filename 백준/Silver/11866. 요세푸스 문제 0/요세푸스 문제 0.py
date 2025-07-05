@@ -18,3 +18,7 @@ def josephus(k):
 josephus(k)
 
 print(f"<{', '.join(map(str,result))}>")
+
+
+# join : 여러 값을 하나의 문자열로
+# list 요소들을 문자열로 변환하여함 -> 당연히 map + str
