@@ -5,13 +5,12 @@ input = sys.stdin.readline
 
 m, n = map(int,input().split())
 graph = [list(map(int,input().split())) for _ in range(n)]
-result, max_date = 0, 0
+max_date = 0
 
 dx = [-1,1,0,0]
 dy = [0,0,-1,1]
 
 def bfs(graph):
-    global result
     q = deque()
 
     for i in range(n):
