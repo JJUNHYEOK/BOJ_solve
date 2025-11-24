@@ -1,32 +1,25 @@
-import sys
+n = int(input())
+m = int(input())
 
-input = sys.stdin.readline
+graph = [[] for _ in range(n+1)]
+visited = [False]*(n+1)
 
-v = int(input())
-e = int(input())
+for _ in range(m):
+    a, b = map(int,input().split())
+    graph[a].append(b)
+    graph[b].append(a)
 
-graph = [[] for _ in range(v+1)]
+cnt = 0
 
-for _ in range(e):
-  a, b = map(int, input().split())
+def dfs(start):
+    visited[start] = True
+    global cnt
 
-  graph[a].append(b)
-  graph[b].append(a)
+    for nxt in graph[start]:
+        if not visited[nxt]:
+            dfs(nxt)
+            cnt += 1
 
+    return cnt
 
-def dfs(x, count):
-  visited[x] = True
-  for node in graph[x]:
-    if not visited[node]:
-      count = dfs(node, count+1)
-
-
-  return count
-
-
-visited = [False for _ in range(v+1)]
-
-print(dfs(1,0))
-
-
-
+print(dfs(1))
