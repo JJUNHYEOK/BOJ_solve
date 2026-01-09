@@ -23,7 +23,7 @@
 **[Algorithm]**
 - Sorting
 - Searching
-- DFS/BFS : 현재 최우선 타겟
+- DFS/BFS
 - Dynamic Programming
 - Greedy
 - BackTracking
