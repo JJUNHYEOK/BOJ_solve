@@ -11,7 +11,7 @@ for _ in range(n):
     cmd = jdg[0]
 
     if cmd == 'push':
-        q.append(int(jdg[1]))
+        q.append(jdg[1])
     elif cmd == 'pop':
         print(q.popleft() if q else -1)
     elif cmd == 'size':
