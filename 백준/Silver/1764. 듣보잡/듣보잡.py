@@ -15,7 +15,7 @@ for _ in range(m):
     name = input().rstrip()
     unheard.add(name)
 
-result = sorted(set(unseen&unheard))
+result = sorted(unseen&unheard)
 
 print(len(result))
 
