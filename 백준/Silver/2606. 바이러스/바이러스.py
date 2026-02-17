@@ -1,3 +1,8 @@
+import sys
+sys.setrecursionlimit(10**6)
+
+input = sys.stdin.readline
+
 n = int(input())
 m = int(input())
 
@@ -12,14 +17,13 @@ for _ in range(m):
 cnt = 0
 
 def dfs(start):
-    visited[start] = True
     global cnt
+    visited[start] = True
 
-    for nxt in graph[start]:
-        if not visited[nxt]:
-            dfs(nxt)
+    for cur in graph[start]:
+        if not visited[cur]:
             cnt += 1
+            dfs(cur)
 
-    return cnt
-
-print(dfs(1))
+dfs(1)
+print(cnt)
