@@ -22,7 +22,8 @@
 **[Algorithm]**
 - Sorting
 - Searching
-- DFS/BFS
+- **DFS/BFS**
+- **Simulation**
 - Dynamic Programming
 - Greedy
 - BackTracking
